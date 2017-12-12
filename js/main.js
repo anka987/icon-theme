@@ -25,7 +25,7 @@ $(document).ready(function () {
         percent();
 
     });
-    
+
     percent();
 
 
@@ -59,7 +59,29 @@ $(document).ready(function () {
     }
 
 
+    if ($('.owl-carousel').length > 0) {
+        $('.team').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots:false,
+            nav:true,
+            navText:['<', '>'],
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                }
+            }
+        });
 
+
+    }
 
 
 
