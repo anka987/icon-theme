@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    // kada kliknem na link u nav, da se polako spusti na tu sekciju
 
     $('.navbar-nav a, .landing .container > a').click(function () {
         $('html, body').animate({
@@ -6,6 +8,7 @@ $(document).ready(function () {
         }, 2000);
     });
 
+    // Kada skrolujem 150px, da se smanji padding headera i logo
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -15,21 +18,22 @@ $(document).ready(function () {
             $('.navbar-brand').addClass('small-logo');
         } else {
             $('header').removeClass('py-2');
-            $('header').css('background-color', 'rgba(0,0,0,0.3)');
             $('.navbar-brand').removeClass('small-logo');
+            $('header').css('background-color', 'rgba(0,0,0,0.3)');
         }
     });
 
-// ROUND SLIDER FOR PERCENT
+
+
+    //round slider u sekciji rating
+
     $(window).scroll(function () {
         percent();
-
     });
-
     percent();
 
-
     function percent() {
+
         var vh = $(window).height();
         var scroll = $(window).scrollTop();
 
@@ -45,7 +49,6 @@ $(document).ready(function () {
                 var c = Math.PI * (r * 2);
 
 
-
                 var pct = ((100 - val) / 100) * c;
 
                 $circle.css({strokeDashoffset: pct});
@@ -53,19 +56,19 @@ $(document).ready(function () {
 
 
 
-
-            // $('.cont').attr('data-pct', val);
         });
     }
 
+
+    // owl-carousel u sekciji team
 
     if ($('.owl-carousel').length > 0) {
         $('.team').owlCarousel({
             loop: true,
             margin: 10,
-            dots:false,
-            nav:true,
-            navText:['<', '>'],
+            dots: false,
+            nav: true,
+            navText: ['<', '>'],
             responsiveClass: true,
             responsive: {
                 0: {
@@ -81,14 +84,52 @@ $(document).ready(function () {
         });
 
 
+
     }
 
+    // plugin za zvezdice u sekciji star
 
+    $('.example-fontawesome-o').each(function () {
+        var currentRating = $(this).data('current-rating');
 
+        $(this).find('.current-rating')
+                .find('span')
+                .html(currentRating);
 
+        $(this).find('.clear-rating').on('click', function (event) {
+            event.preventDefault();
 
+            $(this)
+                    .barrating('clear');
+        });
+        $(this).barrating({
+            theme: 'fontawesome-stars-o',
+            showSelectedRating: false,
+            initialRating: currentRating,
+            onSelect: function (value, text) {
+                if (!value) {
+                    $(this)
+                            .barrating('clear');
+                } else {
+                    $(this).find('.current-rating')
+                            .addClass('hidden');
 
-
+                    $(this).find('.your-rating')
+                            .removeClass('hidden')
+                            .find('span')
+                            .html(value);
+                }
+            },
+            onClear: function (value, text) {
+                $(this).find('.stars-example-fontawesome-o')
+                        .find('.current-rating')
+                        .removeClass('hidden')
+                        .end()
+                        .find('.your-rating')
+                        .addClass('hidden');
+            }
+        });
+    });
 
 
 

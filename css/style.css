@@ -3,33 +3,16 @@
     font-family: 'Merriweather', serif;
 }
 
-header{
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    transition: 0.8s linear;
+html{
+    font-size: 14px;
 }
 
 body{
     position: relative;
 }
 
-header .navbar-brand.small-logo{
-    width: 80px;
-    height: 80px;
-}
-
-html{
-    font-size: 14px;
-}
-
 img{
     max-width: 100%;
-}
-
-#main-menu a,
-h1,h2,h3,h4,h5,h6,a{
-    font-family: 'PT Sans', sans-serif !important;
 }
 
 h2,
@@ -48,12 +31,31 @@ figure {
     margin-bottom: 0.4rem;
 }
 
+/***********HEADER START**********/
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    transition: 0.8s linear;
+}
+
+header .navbar-brand.small-logo{
+    width: 80px;
+    height: 80px;
+}
+
+#main-menu a,
+h1,h2,h3,h4,h5,h6{
+    font-family: 'PT Sans', sans-serif !important;
+}
+
 .navbar{
     padding-left: 0;
 }
 
 .navbar-brand{
-    transition: 0.8s linear;
+transition: 0.8s linear;
 }
 
 .navbar-brand img{
@@ -72,7 +74,6 @@ figure {
 .navbar .navbar-toggler:hover{
     background-color: #000;
 }
-
 
 .navbar-light .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -98,7 +99,11 @@ figure {
     color:#000 !important;
 }
 
-/*------LANDING------*/
+/********HEADER END********/
+
+
+/********SECTION LANDING START*********/
+
 .landing{
     background-repeat: no-repeat;
     background-size: cover;
@@ -115,38 +120,35 @@ figure {
     bottom: 0;
     background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)); /*Standard*/
 }
-
 .landing .container .row{
-    
     min-height: 100vh;
 }
-
 .landing article{
     padding-right: 35px;
 }
 
 .landing .container{
     position: relative;
-    
 }
-
 .landing .container > a{
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
-
 .landing .container > a .fa{
     font-size: 32px;
-    color: #fff;
+    color:#fff;
 }
 
 .landing a{
     box-shadow: 2px 10px 10px rgba(0,0,0,0.2);
 }
 
-/*------HOW------*/
+/*******SECTION LANDING END********/
+
+
+/*******SECTION HOW START********/
 .how{
     background-repeat: no-repeat;
     background-size: cover;
@@ -193,7 +195,10 @@ figure {
     box-shadow: 2px 10px 10px rgba(0,0,0,0.2);
 }
 
-/*------RATING------*/
+/*******SECTION HOW END********/
+
+
+/*******SECTION RATING START********/
 .rating{
     background-repeat: no-repeat;
     background-size: cover;
@@ -223,7 +228,10 @@ figure {
     text-transform: capitalize;
 }
 
-/*------STAR------*/
+/*******SECTION RATING END********/
+
+
+/*******SECTION STAR START********/
 .star{
     padding: 80px 0 80px 0;
 }
@@ -261,10 +269,17 @@ figure {
 .star .star-icons{
     margin-bottom: 10px;
 }
+
+/*******SECTION STAR END********/
+
+
+/*******SECTION FEEDBACK START********/
+
 .feedback{
     background-size: cover;
     background-position: center;
 }
+
 .feedback .author{
     color:#2dace7;
     font-weight: bold;
@@ -277,10 +292,16 @@ figure {
     line-height: 1.3;
 }
 
+/*******SECTION FEEDBACK END********/
+
+
+/*******SECTION IPAD START********/
+
 .ipad{
     background-size: cover;
     background-position: top center;
 }
+
 .ipad .container{
     min-height: 100vh;
     background-position: center;
@@ -288,44 +309,56 @@ figure {
     padding:50px 15px;
     position: relative;
 }
+
 .ipad .container a.btn{
     position: absolute;
     left: 15px;
     bottom: 50px;
 }
 
+/*******SECTION IPAD END********/
+
+
+/*******SECTION NEWSLETTER START********/
+
 .newsletter{
     background-position: bottom center;
     padding: 200px 0;
     background-size: cover;
 }
+
 .newsletter .fa,
 .newsletter h2{
     color: #4bd7c8;
 }
+
 .newsletter .fa{
     font-size: 40px;
 }
+
 .newsletter .form-control{
     border-color: #4bd7c8;
     padding: 7px 10px;
 }
+
 .newsletter .form-control:hover,
-.newsletter .form-control:focus
-
-{
-
-        padding: 7px 10px;
+.newsletter .form-control:focus{
+    padding: 7px 10px;
 }
+
 .newsletter form button{
     position: relative;
 }
+
+/*******SECTION NEWSLETTER END********/
+
+
+/*******FOOTER START********/
 
 footer{
     padding: 50px 0;
 }
 
-/*------FOOTER------*/
 footer ul a{
     color: #4bd7c8;
     font-size: 21px;
@@ -362,7 +395,6 @@ footer .share a .fa{
 }
 footer .share a:hover .fa{
     color:rgba(0,0,0,1);
-
 }
 
 footer .share a:first-of-type{
@@ -382,6 +414,8 @@ footer .nav{
     text-align: center;
 }
 
+/********FOOTER END**********/
+
 /*------BUTTONS------*/
 .btn-primary {
     color: #333;
@@ -400,12 +434,11 @@ footer .nav{
     padding: 0.75rem 1.25rem;
 }
 
-
+/******ROUND SLIDER FOR RATING SECTION*******/
 
 .svg{
     transform: rotate(-90deg);
 }
-
 .svg circle {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1s linear;
@@ -413,15 +446,15 @@ footer .nav{
   stroke-width: 1em;
 }
 .svg .bar {
-  stroke: #2dade8;
+  stroke:#2dade8;
 }
 .cont {
   display: block;
   height: 200px;
   width: 200px;
   margin: 2em auto;
-  color: #fff;
-  font-family: 'Merriweather', serif;
+ color:#fff;
+ font-family:'Merriweather', serif; 
   border-radius: 100%;
   position: relative;
 }
@@ -432,7 +465,6 @@ footer .nav{
   width: 160px;
   left: 50%;
   top: 50%;
-  
   content: attr(data-pct)"%";
   margin-top: -80px;
   margin-left: -80px;
@@ -441,3 +473,5 @@ footer .nav{
   font-size: 2em;
   text-shadow: 0 0 0.5em black;
 }
+
+
